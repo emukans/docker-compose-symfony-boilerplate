@@ -48,6 +48,10 @@ Please follow the instructions to set up the Symfony project.
         exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
     }
     ```
+4. **Optional.** After initializing the project you can remove `.git` folder and setup your own repository.
+    ```bash
+    sudo rm -r .git
+    ```
 
 ## License
 
