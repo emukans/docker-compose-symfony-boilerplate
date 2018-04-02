@@ -28,7 +28,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 COPY php.ini /usr/local/etc/php/php.ini
 
-RUN echo 'alias sf="php app/console"' >> ~/.bashrc
-RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
+RUN echo 'alias sf="php bin/console"' >> ~/.bashrc
 
 WORKDIR /opt/project
