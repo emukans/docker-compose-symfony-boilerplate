@@ -14,9 +14,7 @@ docker build --tag php-fpm php-fpm
 mkdir -p ${APP_PATH}
 docker start symfony-php || docker run --env-file .env -v ${ROOT_DIR}${APP_PATH}:/opt/project --name symfony-php -d php-fpm
 
-docker exec -it symfony-php bash -c "curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony"
-docker exec -it symfony-php bash -c "chmod a+x /usr/local/bin/symfony"
-docker exec -it symfony-php bash -c "symfony new . lts"
+docker exec -it symfony-php bash -c "composer create-project symfony/framework-standard-edition ."
 
 docker stop symfony-php
 docker rm symfony-php
