@@ -30,15 +30,15 @@ Please follow the instructions to set up the Symfony project.
 3. Symfony is configured to use DEV environment as default and in this case you will use `app_dev.php`. If you are not using `docker-machine`, you need to allow access to `app_dev.php` front controller.
     - Find your network's IP.
     ```bash
-    docker inspect symfony-php
+    docker network inspect symfonyproject_default | grep Gateway
     ```
     
-    At the bottom under `Networks` section, find `Gateway` parameter.
+    If you changed `COMPOSE_PROJECT_NAME` in `.env` file, you should prefix network name to this value. You will see the output something similar to this.
     ```bash
         "Gateway": "172.21.0.1"
     ```
     
-    - In `app_dev.php` add this IP to allowed hosts.
+    - In `app_dev.php` add this IP to allowed hosts. The same needs to be done for `config.php`
     ```php
     // Added '172.21.0.1' in array for allowed hosts.
     if (isset($_SERVER['HTTP_CLIENT_IP'])
