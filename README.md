@@ -20,10 +20,10 @@ Please follow the instructions to set up the Symfony project.
     # Here you specify the path to your existing Symfony project
     APP_PATH=./src
     ```
-    - **If you starting from scratch. (You can skip if you have existing project)** You can override the `.env` file and `APP_PATH` variable in the same way as on previous point, but it is **recommended** to leave it as it is.
-    You need to launch bash script to create a new project.
+    - **If you starting from scratch. (You can skip if you have existing project)**
+    You need to launch Symfony install command.
     ```bash
-    ./scripts/bootstrap.sh
+    docker-compose exec php initsymfony
     ```
     A new project will be installed in `src` directory by default.
     During installation process you will be prompted for parameters.yml configuration. For `database_host` you should type `db` and for `database_port` type `3306`. The rest is specified in `.env`.

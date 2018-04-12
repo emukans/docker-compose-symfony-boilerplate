@@ -28,6 +28,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 COPY php.ini /usr/local/etc/php/php.ini
 
+COPY initsymfony.sh /usr/local/bin/initsymfony
+RUN chmod +x /usr/local/bin/initsymfony
+
 RUN echo 'alias sf="php bin/console"' >> ~/.bashrc
 
 WORKDIR /opt/project
